@@ -1,15 +1,22 @@
-import { Button, HStack, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { Grid, GridItem, Text } from "@chakra-ui/react";
+import { ColorModeButton, useColorMode } from "./components/ui/color-mode";
 
 function App() {
-  const [counter, setCounter] = useState(0);
-
   return (
-    <HStack>
-      <Button onClick={() => setCounter(counter - 1)}>Decrement</Button>
-      <Text>{counter}</Text>
-      <Button onClick={() => setCounter(counter + 1)}>Increment</Button>
-    </HStack>
+    <Grid templateRows="60px 1fr" templateColumns="200px 1fr">
+      <GridItem
+        colorPalette="red"
+        colSpan={2}
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <Text fontSize="2xl">GAMIFY</Text>
+        <ColorModeButton />
+      </GridItem>
+      <GridItem bgColor="red.200">Aside</GridItem>
+      <GridItem bgColor="blue.200">Main</GridItem>
+    </Grid>
   );
 }
 
