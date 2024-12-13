@@ -14,7 +14,7 @@ export interface Genre {
 }
 
 interface Props{
-    apiEndpoint:string
+    apiEndpoint:string;
 }
 
 const useData = <T>({apiEndpoint}:Props) => {
